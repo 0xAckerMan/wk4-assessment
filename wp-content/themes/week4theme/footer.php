@@ -1,4 +1,4 @@
-<footer> This is the footer </footer>
-<?php wp_nav_menu(['theme_location' => 'secondary']);?>
+<footer id="footer" style="background-color: red;"><?php wp_nav_menu(['theme_location' => 'footer']);?></footer>
+
 </body>
 </html>
