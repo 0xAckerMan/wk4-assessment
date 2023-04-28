@@ -7,6 +7,6 @@ add_action('wp_enqueue_scripts', 'c13theme_script_enqueue');
 
 
 function themename_post_formats_setup() {
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video') );
+    add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 }
 add_action( 'after_setup_theme', 'themename_post_formats_setup' );

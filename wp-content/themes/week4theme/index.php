@@ -6,9 +6,16 @@
         
         the_title();
         the_content();
+        ?>
+        <?php next_posts_link("<<older") ?>
+        <?php previous_posts_link("new>>") ?>
+    <?php
     endwhile;
+    
 endif;
 ?>
+
+
 
 
 <?php get_footer(); ?>
