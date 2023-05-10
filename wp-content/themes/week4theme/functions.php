@@ -20,4 +20,48 @@ function themename_post_formats_setup() {
 }
 add_action( 'after_setup_theme', 'themename_post_formats_setup' );
 
+add_theme_support('post-thumbnails');
 
+// CUSTOM POST TYPES
+function portfolio_post_type(){
+  $labels = [
+    'name' => 'portfolios',
+    'singular_name' => 'portfolio',
+    'add_new' => 'Add portfolio item',
+    'all_items' => 'All Portfolios',
+    'add_new_item' =>'Edit Items',
+    'new_item' => 'New Item',
+    'view_item' => 'View Items',
+    'search_item' => 'Search Portfolio',
+    'not_found' => 'No Item found',
+    'not_found_in_trash' => 'No Item found in trash',
+    'parent_item_colon' => 'Parent Item'
+  ];
+
+  $args = [
+    'labels' => $labels,
+    'public' => true,
+    'has_archives' => true,
+    'publicly_queryable' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability' => 'post',
+    'hierarchical' => false,
+    'supports' => [
+      'title',
+      'editor',
+      'excerpt',
+      'thumbnail',
+      'revision',
+    ],
+    'taxonomies' => [
+      'category',
+      'post_tag',
+      'menu_postion' => 5
+    ]
+  ];
+
+  register_post_type('portfolio', $args);
+}
+
+add_action('init', 'portfolio_post_type');
